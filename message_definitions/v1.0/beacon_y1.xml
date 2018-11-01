@@ -52,7 +52,18 @@
         <param index="6">Empty</param>
         <param index="7">Empty</param>
       </entry>
-      <entry value="60004" name="MAV_CMD_START_WORK">
+      <entry value="60004" name="MAV_CMD_SET_MODE_AB">
+        <description>APP Set AB mode.</description>
+        <param index="1">Empty</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+      
+      <entry value="60005" name="MAV_CMD_START_WORK">
         <description>Auto mode start.</description>
         <param index="1">App flight mode, see enum APP_FLIGHT_MODE.</param>
         <param index="2">Empty</param>
@@ -62,7 +73,7 @@
         <param index="6">Empty</param>
         <param index="7">Empty</param>
       </entry>
-      <entry value="60005" name="MAV_CMD_PAUSE_WORK">
+      <entry value="60006" name="MAV_CMD_PAUSE_WORK">
         <description>Auto mode pause.</description>
         <param index="1">Empty</param>
         <param index="2">Empty</param>
@@ -72,7 +83,7 @@
         <param index="6">Empty</param>
         <param index="7">Empty</param>
       </entry>
-       <entry value="60006" name="MAV_CMD_FINISH_WORK">
+       <entry value="60007" name="MAV_CMD_FINISH_WORK">
         <description>Auto mode finish.</description>
         <param index="1">Empty</param>
         <param index="2">Empty</param>
@@ -99,13 +110,21 @@
       <field type="int32_t" name="param5">Parameter 7.</field>
       <field type="int32_t" name="param6">Parameter 8.</field>
     </message>
-    <message id="204" name="SPECIAL_POINT_INFO">
+    <message id="204" name="BEACON_COMMON_PARAM_REQUEST">
+      <description>Request beacon_common_param.</description>
+      <field type="uint8_t" name="reserve">Reserve.</field>
+    </message>
+    <message id="205" name="SPECIAL_POINT_INFO">
       <description>Send break point , AB mode A point, or B point info, both direction.</description>
       <field type="uint8_t" name="point_type">point type, 1: break point; 2: A point; 3: B point </field>
       <field type="uint8_t" name="direction">0 or 1, for AB mode only</field>
       <field type="uint8_t" name="seq">the seq of next waypoint, for break point only </field>
       <field type="int32_t" name="latitude">Parameter 1, latitude in degrees * 10^7.</field>
       <field type="int32_t" name="longitude">Parameter 2, longitude in degrees * 10^7.</field>
+    </message>
+    <message id="206" name="SPECIAL_POINT_INFO_REQUEST">
+      <description>Request special_point_info.</description>
+      <field type="uint8_t" name="point_type">point type, 1: break point; 2: A point; 3: B point </field>
     </message>
 
   </messages>
