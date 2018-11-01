@@ -3529,6 +3529,7 @@
       <field type="float" name="flow_rate_y" units="rad/s">Flow rate in radians/second about Y axis</field>
     </message>
     <message id="101" name="GLOBAL_VISION_POSITION_ESTIMATE">
+   	  <description>Global position/attitude estimate from a vision source.</description>
       <field type="uint64_t" name="usec" units="us">Timestamp (microseconds, synced to UNIX time or since system boot)</field>
       <field type="float" name="x" units="m">Global X position</field>
       <field type="float" name="y" units="m">Global Y position</field>
@@ -3540,6 +3541,7 @@
       <field type="float[21]" name="covariance">Pose covariance matrix upper right triangular (first six entries are the first ROW, next five entries are the second ROW, etc.)</field>
     </message>
     <message id="102" name="VISION_POSITION_ESTIMATE">
+      <description>Global position/attitude estimate from a vision source.</description>
       <field type="uint64_t" name="usec" units="us">Timestamp (microseconds, synced to UNIX time or since system boot)</field>
       <field type="float" name="x" units="m">Global X position</field>
       <field type="float" name="y" units="m">Global Y position</field>
@@ -3551,6 +3553,7 @@
       <field type="float[21]" name="covariance">Pose covariance matrix upper right triangular (first six entries are the first ROW, next five entries are the second ROW, etc.)</field>
     </message>
     <message id="103" name="VISION_SPEED_ESTIMATE">
+	  <description>Global position/attitude estimate from a vision source.</description>
       <field type="uint64_t" name="usec" units="us">Timestamp (microseconds, synced to UNIX time or since system boot)</field>
       <field type="float" name="x" units="m/s">Global X speed</field>
       <field type="float" name="y" units="m/s">Global Y speed</field>
@@ -3559,6 +3562,7 @@
       <field type="float[9]" name="covariance">Linear velocity covariance matrix (1st three entries - 1st row, etc.)</field>
     </message>
     <message id="104" name="VICON_POSITION_ESTIMATE">
+	  <description>Global position/attitude estimate from a vision source.</description>
       <field type="uint64_t" name="usec" units="us">Timestamp (microseconds, synced to UNIX time or since system boot)</field>
       <field type="float" name="x" units="m">Global X position</field>
       <field type="float" name="y" units="m">Global Y position</field>
@@ -3858,6 +3862,7 @@
       <field type="int16_t" name="zmag" units="mT">Z Magnetic field (milli tesla)</field>
     </message>
     <message id="130" name="DATA_TRANSMISSION_HANDSHAKE">
+      <description>Global position/attitude estimate from a vision source.</description>
       <field type="uint8_t" name="type">type of requested/acknowledged data (as defined in ENUM DATA_TYPES in mavlink/include/mavlink_types.h)</field>
       <field type="uint32_t" name="size" units="bytes">total data size in bytes (set on ACK only)</field>
       <field type="uint16_t" name="width">Width of a matrix or image</field>
@@ -3867,10 +3872,11 @@
       <field type="uint8_t" name="jpg_quality" units="%">JPEG quality out of [1,100]</field>
     </message>
     <message id="131" name="ENCAPSULATED_DATA">
+	  <description>Global position/attitude estimate from a vision source.</description>
       <field type="uint16_t" name="seqnr">sequence number (starting with 0 on every transmission)</field>
       <field type="uint8_t[253]" name="data">image data bytes</field>
     </message>
-    <message id="132" name="DISTANCE_SENSOR">
+    <message id="132" name="DISTANCE_SENSOR">	   <description>Global position/attitude estimate from a vision source.</description>
       <field type="uint32_t" name="time_boot_ms" units="ms">Time since system boot</field>
       <field type="uint16_t" name="min_distance" units="cm">Minimum distance the sensor can measure in centimeters</field>
       <field type="uint16_t" name="max_distance" units="cm">Maximum distance the sensor can measure in centimeters</field>
@@ -4064,6 +4070,7 @@
       <field type="float" name="pos_vert_accuracy" units="m">Vertical position 1-STD accuracy relative to the EKF local origin (m)</field>
     </message>
     <message id="231" name="WIND_COV">
+      <description>Global position/attitude estimate from a vision source.</description>
       <field type="uint64_t" name="time_usec" units="us">Timestamp (micros since boot or Unix epoch)</field>
       <field type="float" name="wind_x" units="m/s">Wind in X (NED) direction in m/s</field>
       <field type="float" name="wind_y" units="m/s">Wind in Y (NED) direction in m/s</field>
@@ -4221,6 +4228,7 @@
       <field type="int8_t[32]" name="value">Memory contents at specified address</field>
     </message>
     <message id="250" name="DEBUG_VECT">
+	  <description>Global position/attitude estimate from a vision source.</description>
       <field type="char[10]" name="name">Name</field>
       <field type="uint64_t" name="time_usec" units="us">Timestamp</field>
       <field type="float" name="x">x</field>
