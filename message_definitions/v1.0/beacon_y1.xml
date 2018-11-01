@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<mavlink>
+  <!-- ICAROUS message definitions                                     -->
+  <!-- https://github.com/nasa/icarous                                 -->
+  <!-- email contacts: Swee Balachandran: swee.balachandran@nianet.org -->
+  <!--                 Cesar Munoz: cesar.a.munoz@nasa.gov             -->
+  <!-- mavlink ID range 42000 - 42099                                  -->
+  <enums>
+    <enum name="APP_FLIGHT_MODE">
+      <description>App flight mode</description>
+      <entry value="1" name="APP_FLIGHT_MODE_GPSPLUS">
+        <description>Hold at the current position of the system</description>
+      </entry>
+      <entry value="2" name="APP_FLIGHT_MODE_AB">
+        <description>AB Mode.</description>
+      </entry>
+      <entry value="3" name="APP_FLIGHT_MODE_AUTO">
+        <description>AutoPilot Mode.</description>
+      </entry>
+
+    </enum>
+    
+    <enum name="MAV_CMD">
+      <description>Commands to be executed by the MAV. They can be executed on user request, or as part of a mission script. If the action is used in a mission, the parameter mapping to the waypoint/mission message is as follows: Param 1, Param 2, Param 3, Param 4, X: Param 5, Y:Param 6, Z:Param 7. This command list is similar what ARINC 424 is for commercial aircraft: A data format how to interpret waypoint/mission data.</description>
+      <entry value="60001" name="MAV_CMD_GET_POINT_A">
+        <description>AB mode get point A.</description>
+        <param index="1">Empty</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+      <entry value="60002" name="MAV_CMD_GET_POINT_B">
+        <description>AB mode get point B.</description>
+        <param index="1">Empty</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+      <entry value="60003" name="MAV_CMD_CLEAR_POINT_AB">
+        <description>AB mode clear point AB.</description>
+        <param index="1">Empty</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+      <entry value="60004" name="MAV_CMD_START_WORK">
+        <description>Auto mode start.</description>
+        <param index="1">App flight mode, see enum APP_FLIGHT_MODE.</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+      <entry value="60005" name="MAV_CMD_PAUSE_WORK">
+        <description>Auto mode pause.</description>
+        <param index="1">Empty</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+       <entry value="60006" name="MAV_CMD_FINISH_WORK">
+        <description>Auto mode finish.</description>
+        <param index="1">Empty</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+
+    </enum>
+    
+  </enums>
+
+  <messages>
+    <message id="203" name="BEACON_COMMON_PARAM">
+      <description>Send common parameters, both direction.</description>
+      <field type="int32_t" name="function_settings">Parameter 1, ennable or disable some function: sensor, function, etc.</field>
+      <field type="int32_t" name="height">Parameter 2, with unit cm.</field>
+      <field type="int32_t" name="width">Parameter 3, with unit cm, minus value for shift left, plus value for shift right.</field>
+      <field type="int32_t" name="speed">Parameter 4, with unit cm/s.</field>
+      <field type="int32_t" name="flow">Parameter 5, with unit xx</field>
+      <field type="int32_t" name="param4">Parameter 6.</field>
+      <field type="int32_t" name="param5">Parameter 7.</field>
+      <field type="int32_t" name="param6">Parameter 8.</field>
+    </message>
+    <message id="204" name="SPECIAL_POINT_INFO">
+      <description>Send break point , AB mode A point, or B point info, both direction.</description>
+      <field type="uint8_t" name="point_type">point type, 1: break point; 2: A point; 3: B point </field>
+      <field type="uint8_t" name="direction">0 or 1, for AB mode only</field>
+      <field type="uint8_t" name="seq">the seq of next waypoint, for break point only </field>
+      <field type="int32_t" name="latitude">Parameter 1, latitude in degrees * 10^7.</field>
+      <field type="int32_t" name="longitude">Parameter 2, longitude in degrees * 10^7.</field>
+    </message>
+
+  </messages>
+</mavlink>
