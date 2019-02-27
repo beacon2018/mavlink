@@ -83,43 +83,10 @@
         <param index="6">Empty</param>
         <param index="7">Empty</param>
       </entry>
-      <entry value="60007" name="MAV_CMD_FINISH_WORK">
+       <entry value="60007" name="MAV_CMD_FINISH_WORK">
         <description>Auto mode finish.</description>
         <param index="1">Empty</param>
         <param index="2">Empty</param>
-        <param index="3">Empty</param>
-        <param index="4">Empty</param>
-        <param index="5">Empty</param>
-        <param index="6">Empty</param>
-        <param index="7">Empty</param>
-      </entry>
-      
-      <entry value="60021" name="MAV_CMD_SPRAYER_ON_OFF">
-        <description>Open / Close sprayer.</description>
-        <param index="1">on_off</param>
-        <param index="2">Empty</param>
-        <param index="3">Empty</param>
-        <param index="4">Empty</param>
-        <param index="5">Empty</param>
-        <param index="6">Empty</param>
-        <param index="7">Empty</param>
-      </entry>
-
-      <entry value="60024" name="MAV_CMD_CALI_SPRAYER">
-        <description>Start/End calibrate sprayer.</description>
-        <param index="1">cali type: 1 for solid sprayer, 0 for liquid sprayer.</param>
-        <param index="2">cali cmd: 1 for start, 0 for end</param>
-        <param index="3">cali param value</param>
-        <param index="4">Empty</param>
-        <param index="5">Empty</param>
-        <param index="6">Empty</param>
-        <param index="7">Empty</param>
-      </entry>
-
-  	  <entry value="60025" name="MAV_CMD_CALI_RESULT">
-        <description>Request/Response result of calibration.</description>
-        <param index="1">calibration result</param>
-        <param index="2">calibration flag: 0:invalid, 1:valid</param>
         <param index="3">Empty</param>
         <param index="4">Empty</param>
         <param index="5">Empty</param>
