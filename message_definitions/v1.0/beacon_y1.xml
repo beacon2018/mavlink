@@ -159,6 +159,15 @@
       <description>Request special_point_info.</description>
       <field type="uint8_t" name="point_type">point type, 1: break point; 2: A point; 3: B point </field>
     </message>
-
+    <message id="207" name="BEACON_STATUS">
+      <description>Request special_point_info.</description>
+      <field type="uint8_t" name="type">point type, 0: nomal; 1-255 reserve for special type of vehicle or payload</field>
+      <field type="uint16_t" name="beacon_sensors_present">itmask showing which sensors are present. Value of 0: not present. Value of 1: present</field>
+      <field type="uint16_t" name="beacon_sensors_enabled">Bitmask showing which sensors are enabled:  Value of 0: not enabled. Value of 1: enabled. </field>
+      <field type="uint16_t" name="beacon_sensors_health">Bitmask showing which sensors are operational or have an error:  Value of 0: not health. Value of 1: enabled.</field>
+      <field type="uint16_t" name="beacon_node_present">itmask showing which node are present. Value of 0: not present. Value of 1: present</field>
+      <field type="uint16_t" name="beacon_node_enabled">Bitmask showing which node are enabled:  Value of 0: not enabled. Value of 1: enabled. </field>
+      <field type="uint16_t" name="beacon_node_health">Bitmask showing which node are operational or have an error:  Value of 0: not health. Value of 1: enabled.</field>
+    </message>
   </messages>
 </mavlink>
