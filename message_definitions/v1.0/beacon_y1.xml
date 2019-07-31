@@ -128,7 +128,19 @@
       </entry>
 
     </enum>
-    
+     <enum name="MAV_BEACON_SUBPROC_STA_OFFS">
+      <description>beacon sub-process status mask offset</description>
+      <entry value="0" name="MAV_BEACON_SUBPROC_STA_OFFS_ABSAMP">
+        <description>0x00 ab sample point status 3bits with offset 0</description>
+      </entry>
+
+    </enum>
+     <enum name="MAV_BEACON_SUBPROC_STA_MSK">
+      <description>beacon sub-process status mask</description>
+      <entry value="0x00000007" name="MAV_BEACON_SUBPROC_STA_MSK_ABSAMP_3B">
+        <description>0x07 ab sample point status 3bits with offset 0</description>
+      </entry>
+    </enum>
   </enums>
 
   <messages>
@@ -161,13 +173,14 @@
     </message>
     <message id="207" name="BEACON_STATUS">
       <description>Request special_point_info.</description>
-      <field type="uint8_t" name="type">point type, 0: nomal; 1-255 reserve for special type of vehicle or payload</field>
-      <field type="uint16_t" name="beacon_sensors_present">itmask showing which sensors are present. Value of 0: not present. Value of 1: present</field>
-      <field type="uint16_t" name="beacon_sensors_enabled">Bitmask showing which sensors are enabled:  Value of 0: not enabled. Value of 1: enabled. </field>
-      <field type="uint32_t" name="beacon_sensors_status">Bitmask showing which sensors' status, double bits indicate one sensor status.</field>
-      <field type="uint16_t" name="beacon_node_present">itmask showing which node are present. Value of 0: not present. Value of 1: present</field>
-      <field type="uint16_t" name="beacon_node_enabled">Bitmask showing which node are enabled:  Value of 0: not enabled. Value of 1: enabled. </field>
-      <field type="uint32_t" name="beacon_node_status">Bitmask showing which nodes' status, double bits indicate one node status</field>
-    </message>
+      <field type="uint8_t" name="type">type, 0: nomal; 1-255 reserve for special type of vehicle or payload</field>
+      <field type="uint8_t" name="beacon_sensors_present">itmask showing which sensors are present. Value of 0: not present. Value of 1: present</field>
+      <field type="uint8_t" name="beacon_sensors_enabled">Bitmask showing which sensors are enabled:  Value of 0: not enabled. Value of 1: enabled. </field>
+      <field type="uint16_t" name="beacon_sensors_status">Bitmask showing which sensors' status, double bits indicate one sensor status.</field>
+      <field type="uint8_t" name="beacon_node_present">itmask showing which node are present. Value of 0: not present. Value of 1: present</field>
+      <field type="uint8_t" name="beacon_node_enabled">Bitmask showing which node are enabled:  Value of 0: not enabled. Value of 1: enabled. </field>
+      <field type="uint16_t" name="beacon_node_status">Bitmask showing which nodes' status, double bits indicate one node status</field>
+      <field type="uint32_t" name="beacon_subprocess_status">Bitmask showing which inner sub-process status, one sub-process status may use one or more bits</field>
+     </message>
   </messages>
 </mavlink>
